@@ -1,0 +1,282 @@
+html, body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+body {
+    background-color: white;
+    color: #ED1C24;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: covik-sans, sans-serif;
+}
+
+.container {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+
+.card {
+    max-width: 600px;
+    border: dashed 5px #ED1C24;
+    padding: 15px 35px;
+    
+    text-align: center;
+}
+
+.scratch {
+    background-color: #ED1C24;
+    max-width: 530px;
+    height: 190px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    margin: 0px;
+
+    font-family: beastly, serif;
+    font-size: 80px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+h2 {
+    margin: 0px 0px 20px;
+
+    font-size: 21px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+hr {
+    max-width: 320px;
+    border-top: solid 3px #ED1C24;
+}
+
+.description {
+    max-width: 450px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.description span {
+    border-bottom: 2px dotted #ED1C24;
+}
+
+.hide {
+    display: none;
+}
+
+.hoverText {
+    position: fixed;
+    padding: 15px;
+    top: 40%;
+    left: 40%;
+    width: 300px;
+    background-color: white;
+    border: 3px solid #ED1C24;
+    z-index: 10;
+}
+
+.hover:hover {
+    background-color: #ED1C24;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color:#ED1C24;
+}
+
+a.portfolio {
+    background-color: #ED1C24;
+    color: white;
+}
+
+.newyear {
+    margin: 15px 0px 5px;
+
+    font-family: beastly, sans-serif;
+    font-size: 28px;
+    font-weight: 100;
+}
+
+
+
+/*  tape and sticker */
+
+.star-sticker {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    right: 0;
+    top: 80px;
+    transform: translateX(100px) rotate(-4deg);
+    background-image: url(../star.svg);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.star-sticker p {
+    width: 110px;
+    color: white;
+    font-size: 23px;
+    text-align: center;
+    font-weight: 700;
+    font-style: italic;
+}
+
+a.refresh {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(30%, 20%) rotate(-6deg);
+    background-color: #ED1C24;
+    border: solid 3px #ED1C24;
+    padding: 8px 15px;
+    width: fit-content;
+    color: white;
+
+    font-size: 18px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+a.refresh:hover {
+    color: #ED1C24;
+    background-color: white;
+    border: solid 3px #ED1C24;
+
+}
+
+
+/* scratch out area styles */
+
+.scratch, .scratch-out-overlay {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+}
+
+
+.in, .in-bg, .scratch-out-overlay, .out, .out-bg {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.in-bg, .out-bg {
+    width: 100%;
+    height: 100%;
+}
+
+.in, .out {
+    mix-blend-mode: darken;
+}
+
+.scratch-out-overlay {
+    mix-blend-mode: lighten;
+}
+
+.in-bg {
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.in-bg h3 {
+    font-size: 34px;
+    padding: 30px 15px;
+    border: double 6px #ED1C24;
+}
+
+.out-bg {
+    background-color: #ED1C24;
+    background-image: url(../scratch.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/* media query test */
+@media(max-width: 730px) {
+    .card {
+        max-width: 400px;
+    }
+}
+
+@media(max-width: 400px) {
+    body {
+        display: block;
+    }
+
+    .container {
+        margin: 10px;
+    }
+
+    .card {
+        max-width: 300px;
+        padding: 30px 30px 15px;
+    }
+
+    h1 {
+        font-size: 72px;
+        line-height: 0.8;
+    }
+
+    h2 {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .description {
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+
+    .hoverText {
+        width: 120px;
+    }
+
+    .scratch {
+        height: 155px;
+    }
+
+    .in-bg h3 {
+        font-size: 24px;
+        padding: 15px;
+    }
+
+    .newyear {
+        font-size: 24px;
+    }
+
+    .star-sticker {
+        display: none;
+    }
+
+    a.refresh {
+        display: none;
+    }
+}
